@@ -6,6 +6,6 @@ class HeaderComponentTest < ViewComponent::TestCase
   def test_component_includes_title
     render_inline(HeaderComponent.new)
 
-    assert_selector "header.header p", text: "βインディの星明かり"
+    assert_selector "header.header span.title", text: "βインディの星明かり"
   end
 end

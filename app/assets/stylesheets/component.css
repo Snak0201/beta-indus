@@ -1,0 +1,10 @@
+.header{
+  background-color: #d4f368;
+  display: flex;
+  align-items: center;
+
+  .title{
+    font-size: 22px;
+    margin-left: 12px;
+  }
+}
