@@ -16,7 +16,8 @@
 
 .footer_component {
   width: 100%;
-  background-color: #d4f368;
+  background-color: #0c7bbb;
+  color: white;
   text-align: center;
   padding: 5px 0;
 
@@ -26,5 +27,5 @@
 }
 
 .title_component {
-  margin-left: 10px;
+  margin-block: 0 10px;
 }

@@ -1,0 +1,11 @@
+/* 
+  ページ特有のスタイルを記載
+  ページ名_page の形式でクラス名を付与する
+ */
+
+.static_pages_home_page {
+  .logo {
+    display: block;
+    margin: 1em auto;
+  }
+}
