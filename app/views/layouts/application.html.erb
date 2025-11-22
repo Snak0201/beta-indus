@@ -29,6 +29,10 @@
   </head>
 
   <body>
+    <%= render HeaderComponent.new %>
+    <main>
     <%= yield %>
+    </main>
+    <%= render FooterComponent.new %>
   </body>
 </html>
