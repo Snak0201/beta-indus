@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[8.1].define(version: 2025_11_22_160322) do
   create_table "birthday_brands", force: :cascade do |t|
+    t.integer "birthday_character_id"
     t.date "born_on", null: false
     t.string "color"
     t.datetime "created_at", null: false
@@ -20,6 +21,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_160322) do
     t.string "name", null: false
     t.string "name_kana", null: false
     t.datetime "updated_at", null: false
+    t.index ["birthday_character_id"], name: "index_birthday_brands_on_birthday_character_id"
   end
 
   create_table "birthday_characters", force: :cascade do |t|
@@ -32,4 +34,6 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_160322) do
     t.string "last_name_kana", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "birthday_brands", "birthday_characters"
 end
