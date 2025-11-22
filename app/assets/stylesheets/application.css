@@ -8,3 +8,21 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* フッターをページ下に固定する */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+  background-color: #ccf2f5;
+}
+
+/* メインコンテンツの幅を制限する */
+main {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #ffffff;
+}

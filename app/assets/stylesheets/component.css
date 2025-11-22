@@ -1,0 +1,31 @@
+/* 
+  コンポーネント特有のスタイルを記載
+  コンポーネント名_component の形式でクラス名を付与する
+*/
+
+.header_component {
+  background-color: #d4f368;
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: 22px;
+    margin-left: 12px;
+  }
+}
+
+.footer_component {
+  width: 100%;
+  background-color: #0c7bbb;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+.title_component {
+  margin-block: 0 10px;
+}
