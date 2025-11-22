@@ -10,5 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_22_160322) do
+  create_table "birthday_brands", force: :cascade do |t|
+    t.date "born_on", null: false
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.string "formal_name", null: false
+    t.string "formal_name_kana", null: false
+    t.string "name", null: false
+    t.string "name_kana", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "birthday_characters", force: :cascade do |t|
+    t.date "born_on", null: false
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.string "first_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name", null: false
+    t.string "last_name_kana", null: false
+    t.datetime "updated_at", null: false
+  end
 end
