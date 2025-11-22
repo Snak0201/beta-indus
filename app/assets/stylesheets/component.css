@@ -8,3 +8,14 @@
     margin-left: 12px;
   }
 }
+
+.footer{
+  width: 100%;
+  background-color: #d4f368;
+  text-align: center;
+  padding: 5px 0;
+
+  .text{
+    font-size: 14px;
+  }
+}
