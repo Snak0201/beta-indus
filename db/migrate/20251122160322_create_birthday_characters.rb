@@ -1,7 +1,7 @@
 class CreateBirthdayCharacters < ActiveRecord::Migration[8.1]
   def change
     create_table :birthday_characters do |t|
-      t.references :birthday_brands, null: true, foreign_key: true
+      t.references :birthday_brand, null: true, foreign_key: true
       t.string :last_name, null: false, comment: "姓"
       t.string :last_name_kana, null: false, comment: "姓（カナ）"
       t.string :first_name, null: false, comment: "名"
