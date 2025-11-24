@@ -1,7 +1,7 @@
 test_character:
   birthday_brand_id: test_brand
-  last_name: test
+  last_name: Test
   last_name_kana: テスト
-  first_name: character
+  first_name: Character
   first_name_kana: キャラクター
   born_on: 2025-01-01

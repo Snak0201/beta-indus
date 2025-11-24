@@ -33,4 +33,9 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
     assert_includes character.errors[:first_name_kana], "can't be blank"
     assert_includes character.errors[:born_on], "can't be blank"
   end
+
+  test "full_name method returns correct full name" do
+    character = birthday_characters(:test_character)
+    assert_equal "TestCharacter", character.full_name
+  end
 end
