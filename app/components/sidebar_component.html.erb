@@ -2,9 +2,13 @@
   <section>
     <h2 class="title">誕生日が近いキャラクター</h2>
     <ul>
-      <li>6/21 Ride</li>
-      <li>6/22 On</li>
-      <li>6/25 キャラクターC</li>
+      <% @nearer_birthday_characters.each do |character| %>
+        <li><%= character.born_on_date %> <%= character.full_name %>
+          <% if character.brand %>
+            (<%= character.brand.name %>)
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </section>
   <section>
