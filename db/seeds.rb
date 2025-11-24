@@ -8,9 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# NOTE: seed投入対象のテーブルのデータを削除する
+# NOTE: seed投入対象のテーブルのデータを削除し、IDを1から振りなおせるようにする
+# SQLiteにはTruncateがないので、sqlite_sequenceを直接操作する
 Birthday::Character.delete_all
 Birthday::Brand.delete_all
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='birthday_brands';")
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='birthday_characters';")
 
 Birthday::Brand.create!(
   [
