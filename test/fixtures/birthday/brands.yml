@@ -1,17 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  name_kana: MyString
-  formal_name: MyString
-  formal_name_kana: MyString
-  color: MyString
-  born_on: 2025-11-22
-
-two:
-  name: MyString
-  name_kana: MyString
-  formal_name: MyString
-  formal_name_kana: MyString
-  color: MyString
-  born_on: 2025-11-22
+test_brand:
+  name: Test
+  name_kana: テスト
+  formal_name: Test Brand
+  formal_name_kana: テストブランド
+  born_on: 2025-01-01

@@ -1,17 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  last_name: MyString
-  last_name_kana: MyString
-  first_name: MyString
-  first_name_kana: MyString
-  color: MyString
-  born_on: 2025-11-23
-
-two:
-  last_name: MyString
-  last_name_kana: MyString
-  first_name: MyString
-  first_name_kana: MyString
-  color: MyString
-  born_on: 2025-11-23
+test_character:
+  birthday_brand_id: test_brand
+  last_name: test
+  last_name_kana: テスト
+  first_name: character
+  first_name_kana: キャラクター
+  born_on: 2025-01-01
