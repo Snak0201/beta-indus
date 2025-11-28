@@ -7,7 +7,7 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
       first_name: "太郎",
       last_name_kana: "ヤマダ",
       first_name_kana: "タロウ",
-      born_on: Date.new(1990, 5, 15)
+      born_on: Date.today
     )
     assert character.valid?
   end
@@ -18,8 +18,8 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
       first_name: "太郎",
       last_name_kana: "ヤマダ",
       first_name_kana: "タロウ",
-      born_on: Date.new(1990, 5, 15),
-      brand: birthday_brands(:test_brand)
+      born_on: Date.today,
+      brand: birthday_brands(:default)
     )
     assert character.valid?
   end
@@ -34,8 +34,8 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
     assert_includes character.errors[:born_on], "can't be blank"
   end
 
-  test "full_name method returns correct full name" do
-    character = birthday_characters(:test_character)
-    assert_equal "TestCharacter", character.full_name
+  test "#full_name should returns correct full name" do
+    character = birthday_characters(:default)
+    assert_equal "DefaultCharacter", character.full_name
   end
 end

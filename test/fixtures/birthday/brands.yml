@@ -1,6 +1,6 @@
-test_brand:
-  name: Test
-  name_kana: テスト
-  formal_name: Test Brand
-  formal_name_kana: テストブランド
-  born_on: 2025-01-01
+default: 
+  name: Default
+  name_kana: デフォルト
+  formal_name: Default Brand
+  formal_name_kana: デフォルトブランド
+  born_on: <%= Date.today %>

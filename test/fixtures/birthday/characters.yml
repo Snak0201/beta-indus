@@ -1,7 +1,7 @@
-test_character:
-  birthday_brand_id: test_brand
-  last_name: Test
-  last_name_kana: テスト
+default:
+  birthday_brand_id: default
+  last_name: Default
+  last_name_kana: デフォルト
   first_name: Character
   first_name_kana: キャラクター
-  born_on: 2025-01-01
+  born_on: <%= Date.today %>
