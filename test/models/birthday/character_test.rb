@@ -7,7 +7,7 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
       first_name: "太郎",
       last_name_kana: "ヤマダ",
       first_name_kana: "タロウ",
-      born_on: Date.new(1990, 5, 15)
+      born_on: Date.today
     )
     assert character.valid?
   end
@@ -18,8 +18,8 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
       first_name: "太郎",
       last_name_kana: "ヤマダ",
       first_name_kana: "タロウ",
-      born_on: Date.new(1990, 5, 15),
-      brand: birthday_brands(:test_brand)
+      born_on: Date.today,
+      brand: birthday_brands(:default)
     )
     assert character.valid?
   end
@@ -32,5 +32,22 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
     assert_includes character.errors[:last_name_kana], "can't be blank"
     assert_includes character.errors[:first_name_kana], "can't be blank"
     assert_includes character.errors[:born_on], "can't be blank"
+  end
+
+  test "full_name method should returns correct full name" do
+    character = birthday_characters(:default)
+    assert_equal "DefaultCharacter", character.full_name
+  end
+
+  test "nearer_birthday scope should return characters ordered by upcoming birthdays" do
+    character_attrs = birthday_characters(:default).attributes.symbolize_keys.slice(:last_name, :first_name, :last_name_kana, :first_name_kana, :born_on)
+
+    character_today = birthday_characters(:default)
+    character_yesterday = Birthday::Character.create!(character_attrs.merge(born_on: Date.yesterday))
+    character_tomorrow = Birthday::Character.create!(character_attrs.merge(born_on: Date.tomorrow))
+    character_next_month = birthday_characters(:has_brand)
+
+    assert_equal [ character_today, character_tomorrow, character_next_month, character_yesterday ],
+                 Birthday::Character.nearer_birthday
   end
 end

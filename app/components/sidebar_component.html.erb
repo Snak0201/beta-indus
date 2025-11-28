@@ -1,0 +1,26 @@
+<aside class="sidebar_component">
+  <section>
+    <h2 class="title">誕生日が近いキャラクター</h2>
+    <ul class="birthday_list">
+      <% @nearer_birthday_characters.each do |character| %>
+        <li class="birthday_info">
+          <span class="born_on_date"><%= character.born_on_date %></span>
+          <span class="name">
+            <%= character.full_name %><% if character.brand %> (<%= character.brand.name %>)<% end %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <section>
+    <h2 class="title">誕生日が近いブランド</h2>
+    <ul class="birthday_list">
+      <% @nearer_birthday_brands.each do |brand| %>
+        <li class="birthday_info">
+          <span class="born_on_date"><%= brand.born_on_date %></span>
+          <span class="name"><%= brand.formal_name %></span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</aside>

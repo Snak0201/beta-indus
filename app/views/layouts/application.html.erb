@@ -30,7 +30,10 @@
 
   <body>
     <%= render HeaderComponent.new %>
-    <main><%= yield %></main>
+    <div class="main_sidebar_container">
+      <main><%= yield %></main>
+      <%= render SidebarComponent.new %>
+    </div>
     <%= render FooterComponent.new %>
   </body>
 </html>
