@@ -45,9 +45,9 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
     character_today = birthday_characters(:default)
     character_yesterday = Birthday::Character.create!(character_attrs.merge(born_on: Date.yesterday))
     character_tomorrow = Birthday::Character.create!(character_attrs.merge(born_on: Date.tomorrow))
-    character_furure = Birthday::Character.create!(character_attrs.merge(born_on: Date.today.next_month))
+    character_next_month = birthday_characters(:has_brand)
 
-    assert_equal [ character_today, character_tomorrow, character_furure, character_yesterday ],
+    assert_equal [ character_today, character_tomorrow, character_next_month, character_yesterday ],
                  Birthday::Character.nearer_birthday
   end
 end

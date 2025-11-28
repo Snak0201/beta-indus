@@ -6,10 +6,7 @@
         <li class="birthday_info">
           <span class="born_on_date"><%= character.born_on_date %></span>
           <span class="name">
-            <%= character.full_name %>
-            <% if character.brand %>
-              (<%= character.brand.name %>)
-            <% end %>
+            <%= character.full_name %><% if character.brand %> (<%= character.brand.name %>)<% end %>
           </span>
         </li>
       <% end %>

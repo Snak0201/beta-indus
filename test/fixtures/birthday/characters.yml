@@ -1,7 +1,10 @@
-default:
-  birthday_brand_id: default
+default: &default_attrs
   last_name: Default
   last_name_kana: デフォルト
   first_name: Character
   first_name_kana: キャラクター
   born_on: <%= Date.today %>
+has_brand:
+  <<: *default_attrs
+  brand: default
+  born_on: <%= Date.today.next_month - 1.year %>
