@@ -34,8 +34,20 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
     assert_includes character.errors[:born_on], "can't be blank"
   end
 
-  test "#full_name should returns correct full name" do
+  test "full_name method should returns correct full name" do
     character = birthday_characters(:default)
     assert_equal "DefaultCharacter", character.full_name
+  end
+
+  test "nearer_birthday scope should return characters ordered by upcoming birthdays" do
+    character_attrs = birthday_characters(:default).attributes.symbolize_keys.slice(:last_name, :first_name, :last_name_kana, :first_name_kana, :born_on)
+
+    character_today = birthday_characters(:default)
+    character_yesterday = Birthday::Character.create!(character_attrs.merge(born_on: Date.yesterday))
+    character_tomorrow = Birthday::Character.create!(character_attrs.merge(born_on: Date.tomorrow))
+    character_furure = Birthday::Character.create!(character_attrs.merge(born_on: Date.today.next_month))
+
+    assert_equal [ character_today, character_tomorrow, character_furure, character_yesterday ],
+                 Birthday::Character.nearer_birthday
   end
 end
