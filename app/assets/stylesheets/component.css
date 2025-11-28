@@ -39,4 +39,25 @@
     padding: 5px 0;
     text-align: center;
   }
+
+  .birthday_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .name {
+    flex-grow: 1;
+  }
+
+  .born_on_date {
+    flex-shrink: 0;
+    width: 50px;
+    margin-right: 5px;
+  }
+
+  .birthday_list {
+    margin: 0 5px;
+  }
 }
