@@ -6,10 +6,9 @@
     def create
       @stamina_calculation = Tools::StaminaCalculation.new(stamina_calculation_params)
       if @stamina_calculation.valid?
-        flash.now[:notice] = "スタミナ回復時間を計算しました。"
-        render :show
+        flash[:notice] = "スタミナ計算が完了しました。"
       else
-        flash.now[:alert] = "入力に誤りがあります。"
+        flash.now[:notice] = "入力に誤りがあります。"
         render :show, status: :unprocessable_entity
       end
     end

@@ -1,0 +1,10 @@
+/* 
+  サイトで使う色の定義
+  --color-name の形式で変数名を付与する
+*/
+:root {
+  --color-tsukimura-temari: #0c7bbb;
+  --color-katsuragi-lilja: #eafdff;
+  --color-shiun-sumika: #7cfc00;
+  --color-shinosawa-hiro: #00afcc;
+}
