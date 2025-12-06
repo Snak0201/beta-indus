@@ -32,9 +32,7 @@
     <%= render HeaderComponent.new %>
     <div class="main_sidebar_container">
       <main>
-        <% flash.each do |message_type, message| %>
-          <div class="flash-message <%= message_type %>"><%= message %></div>
-        <% end %>
+        <%= render FlashComponent.new(flash: flash) %>
         <%= yield %>
       </main>
       <%= render SidebarComponent.new %>
