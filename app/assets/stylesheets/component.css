@@ -70,14 +70,13 @@
   }
 
   .message.notice {
-    background-color: #bcdfff;
-    color: #0067C0;
-    border: solid 1px #0067C0;
+    background-color: var(--color-shinosawa-hiro);
+    color: white;
+    border: solid 1px var(--color-tsukimura-temari);
   }
 
   .message.alert {
-    background-color: #ffd4d1;
-    color: #930403;
-    border: solid 1px #930403;
+    background-color: var(--color-himesaki-rinami);
+    border: solid 1px var(--color-hanami-saki);
   }
 }
