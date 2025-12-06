@@ -1,2 +1,18 @@
-<h1>Tools::StaminaCalculations#show</h1>
-<p>Find me in app/views/tools/stamina_calculations/show.html.erb</p>
+<div class="tools_stamina_calculations_show_page">
+  <%= content_for :title, "スタミナ計算機" %>
+  <%= render TitleComponent.new(title: "スタミナ計算機") %>
+  <p>様々なゲームで使われている「スタミナ」について、いつ特定の値になるか、特定の時間にいくつになっているかを計算します。</p>
+  <h2>入力項目</h2>
+  <%= form_with model: @stamina_calculation, url: tools_stamina_calculation_path do |form| %>
+    <%= form.label :target_stamina, "目標のスタミナ" %>
+    <%= form.number_field :target_stamina %>
+
+    <%= form.label :current_stamina, "現在のスタミナ" %>
+    <%= form.number_field :current_stamina %>
+
+    <%= form.label :recovery_seconds, "スタミナが1回復するのにかかる秒数" %>
+    <%= form.number_field :recovery_seconds %>
+
+    <%= form.submit "計算" %>
+  <% end %>
+</div>
