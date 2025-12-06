@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :tools, only: [ :index ]
   namespace :tools do
-    resource :stamina_calculation, only: [ :show ]
+    resource :stamina_calculation, only: [ :show, :create ]
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
