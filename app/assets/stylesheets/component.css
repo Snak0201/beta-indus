@@ -70,9 +70,9 @@
   }
 
   .messages.notice {
-    background-color: var(--color-shinosawa-hiro);
+    background-color: var(--color-tsukimura-temari);
     color: white;
-    border: solid 1px var(--color-tsukimura-temari);
+    border: solid 1px var(--color-shinosawa-hiro);
   }
 
   .messages.alert {

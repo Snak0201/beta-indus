@@ -5,6 +5,16 @@ class Tools::StaminaCalculation
   validates :target_stamina, :current_stamina, :recovery_seconds, numericality: { greater_than_or_equal_to: 0 }
   validate :target_greater_than_current
 
+  def to_target_stamina
+    [
+      "計算が完了しました",
+      "到達までの秒数: #{to_target_stamina_seconds.round} 秒",
+      "到達予定時刻: #{to_target_stamina_time.strftime('%Y/%m/%d %H:%M:%S')}"
+    ]
+  end
+
+  private
+
   def to_target_stamina_seconds
     stamina_diff = target_stamina.to_f - current_stamina.to_f
     stamina_diff * recovery_seconds.to_f
@@ -13,9 +23,7 @@ class Tools::StaminaCalculation
   def to_target_stamina_time
     Time.current + to_target_stamina_seconds
   end
-
-  private
-
+  
   def target_greater_than_current
     return if target_stamina.blank? || current_stamina.blank?
 
