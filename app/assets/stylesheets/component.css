@@ -63,19 +63,19 @@
 }
 
 .flash_component {
-  .message {
+  .messages {
     border-radius: 5px;
     padding: 16px 24px;
     margin: 16px 0px;
   }
 
-  .message.notice {
+  .messages.notice {
     background-color: var(--color-shinosawa-hiro);
     color: white;
     border: solid 1px var(--color-tsukimura-temari);
   }
 
-  .message.alert {
+  .messages.alert {
     background-color: var(--color-himesaki-rinami);
     border: solid 1px var(--color-hanami-saki);
   }

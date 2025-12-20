@@ -1,7 +1,11 @@
 <div class="flash_component">
-  <% @flash.each do |message_type, message| %>
-    <div class="message <%= message_type %>">
-      <%= message %>
+  <% @flash.each do |message_type, messages| %>
+    <div class="messages <%= message_type %>">
+      <ul>
+      <% Array(messages).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 </div>
