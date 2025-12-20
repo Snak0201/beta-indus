@@ -8,7 +8,7 @@
       if @stamina_calculation.valid?
         flash[:notice] = "スタミナ計算が完了しました。"
       else
-        flash.now[:alert] = "入力に誤りがあります。"
+        flash.now[:alert] = @stamina_calculation.errors.full_messages
         render :show, status: :unprocessable_entity
       end
     end
