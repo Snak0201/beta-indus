@@ -8,7 +8,7 @@ class Tools::StaminaCalculation
   def to_target_stamina
     [
       "計算が完了しました",
-      "到達までの秒数: #{to_target_stamina_seconds.round} 秒",
+      "到達までの時間: #{seconds_to_time_format(to_target_stamina_seconds.round)}",
       "到達予定時刻: #{to_target_stamina_time.strftime('%Y/%m/%d %H:%M:%S')}"
     ]
   end
@@ -23,7 +23,13 @@ class Tools::StaminaCalculation
   def to_target_stamina_time
     Time.current + to_target_stamina_seconds
   end
-  
+
+  def seconds_to_time_format(seconds)
+    minutes = (seconds / 60).floor
+    hours = (minutes / 60).floor
+    "#{hours}時間 #{minutes % 60}分 #{seconds % 60}秒"
+  end
+
   def target_greater_than_current
     return if target_stamina.blank? || current_stamina.blank?
 
