@@ -1,8 +1,7 @@
 <div class="tools_stamina_calculations_show_page">
   <%= content_for :title, "スタミナ計算機" %>
   <%= render TitleComponent.new(title: "スタミナ計算機") %>
-  <p>様々なゲームで使われている「スタミナ」について、いつ特定の値になるか、特定の時間にいくつになっているかを計算します。</p>
-  <h2>入力項目</h2>
+  <section>様々なゲームで使われている「スタミナ」について、いつ特定の値になるか、特定の時間にいくつになっているかを計算します。</section>
   <%= form_with model: @stamina_calculation, url: tools_stamina_calculation_path, class: "form" do |form| %>
     <%= form.label :current_stamina, "現在のスタミナは？" %>
     <%= form.number_field :current_stamina %>
