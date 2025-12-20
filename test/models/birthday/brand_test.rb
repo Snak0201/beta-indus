@@ -15,11 +15,11 @@ class Birthday::BrandTest < ActiveSupport::TestCase
   test "should not valid Birthday::Brand without required fields" do
     brand = Birthday::Brand.new
     assert_not brand.valid?
-    assert_includes brand.errors[:name], "can't be blank"
-    assert_includes brand.errors[:name_kana], "can't be blank"
-    assert_includes brand.errors[:formal_name], "can't be blank"
-    assert_includes brand.errors[:formal_name_kana], "can't be blank"
-    assert_includes brand.errors[:born_on], "can't be blank"
+    assert_includes brand.errors[:name], "を入力してください"
+    assert_includes brand.errors[:name_kana], "を入力してください"
+    assert_includes brand.errors[:formal_name], "を入力してください"
+    assert_includes brand.errors[:formal_name_kana], "を入力してください"
+    assert_includes brand.errors[:born_on], "を入力してください"
   end
 
   test "nearer_birthday scope should return brands ordered by upcoming birthdays" do
