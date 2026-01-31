@@ -18,4 +18,27 @@ class Tools::StaminaCalculationTest < ActiveSupport::TestCase
       ]
     end
   end
+
+  test "validation fails when target_stamina is less than current_stamina" do
+    calculation = Tools::StaminaCalculation.new(
+      target_stamina: 30,
+      current_stamina: 50,
+      recovery_seconds: 300
+    )
+
+    assert_not calculation.valid?
+    assert_includes calculation.errors[:target_stamina], "は現在のスタミナ以上の値を入力してください。"
+  end
+
+  test "validation fails when fields are negative or nil" do
+    calculation = Tools::StaminaCalculation.new(
+      target_stamina: -10,
+      current_stamina: nil,
+      recovery_seconds: 0
+    )
+
+    assert_not calculation.valid?
+    assert_includes calculation.errors[:target_stamina], "は0以上の値にしてください"
+    assert_includes calculation.errors[:current_stamina], "は数値で入力してください"
+  end
 end
