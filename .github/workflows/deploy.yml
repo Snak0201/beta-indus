@@ -29,15 +29,12 @@ jobs:
       - name: Expose GitHub Runtime for cache
         uses: crazy-max/ghaction-github-runtime@v3
 
-      - name: Create pem key
+      - name: Set up keys
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.KAMAL_REGISTRY_PASSWORD }}" > .kamal/registry_password.key
-
-      - name: Create master key
-        run: |
-          mkdir -p config
           echo "${{ secrets.RAILS_MASTER_KEY }}" > config/master.key
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/key-2026-01-31-11-32.pem
 
       - name: Deploy
         run: bundle exec kamal deploy
