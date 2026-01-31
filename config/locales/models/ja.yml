@@ -6,4 +6,4 @@ ja:
       tools/stamina_calculation:
         current_stamina: "現在のスタミナ"
         target_stamina: "目標のスタミナ"
-        recovery_seconds: "スタミナ回復にかかる秒数"
+        recovery_seconds: "スタミナが１回復するのにかかる秒数"
