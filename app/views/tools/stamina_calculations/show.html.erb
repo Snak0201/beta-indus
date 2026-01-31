@@ -4,13 +4,13 @@
   <section>様々なゲームで使われている「スタミナ」について、いつ特定の値になるか、特定の時間にいくつになっているかを計算します。</section>
   <%= form_with model: @stamina_calculation, url: tools_stamina_calculation_path, class: "form" do |form| %>
     <%= form.label :current_stamina, "現在のスタミナは？" %>
-    <%= form.number_field :current_stamina %>
+    <%= form.number_field :current_stamina, class: "number_field" %>
 
     <%= form.label :target_stamina, "目標のスタミナは？" %>
-    <%= form.number_field :target_stamina %>
+    <%= form.number_field :target_stamina, class: "number_field" %>
 
     <%= form.label :recovery_seconds, "スタミナが1回復するのにかかる秒数は？" %>
-    <%= form.number_field :recovery_seconds %>
+    <%= form.number_field :recovery_seconds, class: "number_field" %>
 
     <%= form.submit "計算", class: "submit" %>
   <% end %>
