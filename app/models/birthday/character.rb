@@ -6,7 +6,7 @@ class Birthday::Character < ApplicationRecord
   scope :nearer_birthday, -> {
     select(
       "strftime('%m/%d', date(born_on)) AS born_on_date,
-       strftime('%m%d', date(born_on)) < strftime('%m%d', date('now')) AS passed,
+       strftime('%m%d', date(born_on)) < strftime('%m%d', date('now', 'localtime')) AS passed,
        *"
     ).order(passed: :asc, born_on_date: :asc).limit(5)
   }
