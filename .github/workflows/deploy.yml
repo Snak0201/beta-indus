@@ -1,0 +1,40 @@
+name: deploy
+
+on: [ workflow_dispatch ]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Install kamal
+        run: |
+          gem install specific_install
+          gem specific_install https://github.com/basecamp/kamal.git
+
+      - name: Set up Docker Buildx for cache
+        uses: docker/setup-buildx-action@v3
+
+      - name: Expose GitHub Runtime for cache
+        uses: crazy-max/ghaction-github-runtime@v3
+
+      - name: Set up keys
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KAMAL_REGISTRY_PASSWORD }}" > .kamal/registry_password.key
+          echo "${{ secrets.RAILS_MASTER_KEY }}" > config/master.key
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/key-2026-01-31-11-32.pem
+
+      - name: Deploy
+        run: bundle exec kamal deploy
