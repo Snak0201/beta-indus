@@ -80,3 +80,8 @@
     border: solid 1px var(--color-hanami-saki);
   }
 }
+
+.link_component {
+  color: var(--color-shinosawa-hiro);
+  text-decoration: underline;
+}
