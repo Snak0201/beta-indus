@@ -1,4 +1,12 @@
 <div class="static_pages_home_page">
   <%= render TitleComponent.new(title: "βインディの星明かり") %>
   <%= image_tag "logo.png", alt: "夜空に3つの星が流れているロゴ", class: "logo" %>
+  
+  <section>
+    <h2>ツール一覧</h2>
+    <p>作成したツールの一覧です。</p>
+    <ul>
+      <li><%= render LinkComponent.new(link_text: "スタミナ計算機", path: tools_stamina_calculation_path) %></li>
+    </ul>
+  </section>
 </div>
