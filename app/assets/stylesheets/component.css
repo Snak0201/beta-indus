@@ -4,7 +4,7 @@
 */
 
 .header_component {
-  background-color: #d4f368;
+  background-color: var(--color-shiun-sumika);
   display: flex;
   align-items: center;
 
@@ -16,7 +16,7 @@
 
 .footer_component {
   width: 100%;
-  background-color: #0c7bbb;
+  background-color: var(--color-tsukimura-temari);
   color: white;
   text-align: center;
   padding: 5px 0;
@@ -31,7 +31,7 @@
 }
 
 .sidebar_component {
-  background-color: #ccf2f5;
+  background-color: var(--color-katsuragi-lilja);
 
   .title {
     font-size: 16px;
@@ -60,4 +60,28 @@
   .birthday_list {
     margin: 0 5px;
   }
+}
+
+.flash_component {
+  .messages {
+    border-radius: 5px;
+    padding: 16px 24px;
+    margin: 16px 0px;
+  }
+
+  .messages.notice {
+    background-color: var(--color-tsukimura-temari);
+    color: white;
+    border: solid 1px var(--color-shinosawa-hiro);
+  }
+
+  .messages.alert {
+    background-color: var(--color-himesaki-rinami);
+    border: solid 1px var(--color-hanami-saki);
+  }
+}
+
+.link_component {
+  color: var(--color-shinosawa-hiro);
+  text-decoration: underline;
 }

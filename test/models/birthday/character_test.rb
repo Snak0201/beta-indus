@@ -27,11 +27,11 @@ class Birthday::CharacterTest < ActiveSupport::TestCase
   test "should not valid Birthday::Character without required fields" do
     character = Birthday::Character.new
     assert_not character.valid?
-    assert_includes character.errors[:last_name], "can't be blank"
-    assert_includes character.errors[:first_name], "can't be blank"
-    assert_includes character.errors[:last_name_kana], "can't be blank"
-    assert_includes character.errors[:first_name_kana], "can't be blank"
-    assert_includes character.errors[:born_on], "can't be blank"
+    assert_includes character.errors[:last_name], "を入力してください"
+    assert_includes character.errors[:first_name], "を入力してください"
+    assert_includes character.errors[:last_name_kana], "を入力してください"
+    assert_includes character.errors[:first_name_kana], "を入力してください"
+    assert_includes character.errors[:born_on], "を入力してください"
   end
 
   test "full_name method should returns correct full name" do

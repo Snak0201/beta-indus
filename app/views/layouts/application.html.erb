@@ -31,7 +31,10 @@
   <body>
     <%= render HeaderComponent.new %>
     <div class="main_sidebar_container">
-      <main><%= yield %></main>
+      <main>
+        <%= render FlashComponent.new(flash: flash) %>
+        <%= yield %>
+      </main>
       <%= render SidebarComponent.new %>
     </div>
     <%= render FooterComponent.new %>
