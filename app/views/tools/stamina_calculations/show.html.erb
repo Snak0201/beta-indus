@@ -14,4 +14,7 @@
 
     <%= form.submit "計算", class: "submit" %>
   <% end %>
+  <div class="link_to_tools">
+    <%= render LinkComponent.new(link_text: "ツール一覧に戻る", path: tools_path) %>
+  </div>
 </div>

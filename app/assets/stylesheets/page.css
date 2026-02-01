@@ -37,4 +37,8 @@
       border: var(--color-fujita-kotone) 1px solid;
     }
   }
+
+  .link_to_tools {
+    margin-top: 1.5em;
+  }
 }
