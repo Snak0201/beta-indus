@@ -1,2 +1,12 @@
-<h1>Tools::Dices#show</h1>
-<p>Find me in app/views/tools/dices/show.html.erb</p>
+<div class="tools_dice_show_page">
+  <%= content_for :title, "diceNdM（サイコロ）" %>
+  <%= render TitleComponent.new(title: "diceNdM（サイコロ）") %>
+  <section>
+    サイコロを振るツールです。個数と面の数を入力してください。<br>
+    一般的な立方体のサイコロを1つ振る場合は1d6となります。
+  </section>
+
+  <section>
+
+  </section>
+</div>
