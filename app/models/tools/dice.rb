@@ -5,6 +5,6 @@ class Tools::Dice
   validates :number, :side, numericality: { only_integer: true, greater_than: 0 }
 
   def roll
-    Array.new(number) { rand(1..side) }
+    Array.new(number.to_i) { rand(1..side.to_i) }
   end
 end
