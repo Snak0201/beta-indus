@@ -2,8 +2,12 @@ ja:
   activemodel:
     models:
       tools/stamina_calculation: "スタミナ計算機"
+      tools/dice: "diceNdM"
     attributes:
       tools/stamina_calculation:
         current_stamina: "現在のスタミナ"
         target_stamina: "目標のスタミナ"
         recovery_seconds: "スタミナが１回復するのにかかる秒数"
+      tools/dice:
+        number: "個数"
+        side: "面の数"

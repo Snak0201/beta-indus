@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   namespace :tools do
+    resource :dice, only: [ :show, :create ]
     resource :stamina_calculation, only: [ :show, :create ]
   end
 
