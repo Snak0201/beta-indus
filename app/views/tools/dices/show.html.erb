@@ -6,12 +6,14 @@
     一般的な立方体のサイコロを1つ振る場合は1d6となります。
   </section>
 
-  <section>
-    <%= form_with model: @dice, url: tools_dice_path, local: true, class: "form" do |form| %>
-      <%= form.number_field :number, placeholder: "個数", class: "number_field right" %>
-      <span class="d">d</span>
-      <%= form.number_field :side, placeholder: "面の数", class: "number_field" %>
-      <%= form.submit "振る", class: "submit" %>
-    <% end %>
-  </section>
+  <%= form_with model: @dice, url: tools_dice_path, local: true, class: "form" do |form| %>
+    <%= form.number_field :number, placeholder: "個数", class: "number_field right" %>
+    <span class="d">d</span>
+    <%= form.number_field :side, placeholder: "面の数", class: "number_field" %>
+    <%= form.submit "振る", class: "submit" %>
+  <% end %>
+
+  <div class="link_to_home">
+    <%= render LinkComponent.new(link_text: "ホームに戻る", path: root_path) %>
+  </div>
 </div>
