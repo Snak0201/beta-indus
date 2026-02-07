@@ -8,6 +8,7 @@ class Tools::DicesController < ApplicationController
     if @dice.valid?
       results = @dice.roll
       flash.now[:notice] = [
+        "時刻: #{Time.current.strftime('%Y-%m-%d %H:%M:%S.%L')}",
         "合計: #{results.sum}",
         "出目: #{results.join(', ')}"
       ]
