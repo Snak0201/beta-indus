@@ -4,7 +4,8 @@
 */
 
 .header_component {
-  background-color: var(--color-shiun-sumika);
+  background-color: var(--color-tsukimura-temari);
+  color: white;
   display: flex;
   align-items: center;
 
@@ -16,7 +17,7 @@
 
 .footer_component {
   width: 100%;
-  background-color: var(--color-tsukimura-temari);
+  background-color: var(--color-arimura-mao);
   color: white;
   text-align: center;
   padding: 5px 0;
