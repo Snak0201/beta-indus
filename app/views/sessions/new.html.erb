@@ -1,9 +1,12 @@
 <div class="sessions_new_page">
   <%= content_for :title, "認証" %>
   <%= render TitleComponent.new(title: "認証") %>
-  <%= form_with url: session_path do |form| %>
-    <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-    <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-    <%= form.submit "Sign in" %>
+
+  認証が必要なページです。
+
+  <%= form_with url: session_path, class: "form" do |form| %>
+    <%= form.email_field :email_address, required: true, autofocus: true, value: params[:email_address], class:"text_field" %>
+    <%= form.password_field :password, required: true, class:"text_field" %>
+    <%= form.submit "認証", class: "submit" %>
   <% end %>
 </div>
