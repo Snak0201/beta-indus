@@ -1,0 +1,5 @@
+<div class="session_bar_component">
+  <% if authenticated? %>
+    ログイン中 <%= link_to "ログアウト", session_path, method: :delete %>
+  <% end %>
+</div>
