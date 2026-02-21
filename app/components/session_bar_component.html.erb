@@ -1,5 +1,5 @@
 <div class="session_bar_component">
   <% if authenticated? %>
-    ログイン中 <%= link_to "ログアウト", session_path, method: :delete %>
+    <span><%= link_to "ログアウト", session_path, method: :delete %></span>
   <% end %>
 </div>

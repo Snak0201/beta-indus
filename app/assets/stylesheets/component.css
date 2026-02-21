@@ -63,6 +63,11 @@
   }
 }
 
+.session_bar_component {
+  background-color: var(--color-shinosawa-hiro);
+  height: 2em;
+}
+
 .flash_component {
   .messages {
     border-radius: 5px;
