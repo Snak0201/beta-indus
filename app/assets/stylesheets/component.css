@@ -64,10 +64,12 @@
 }
 
 .session_bar_component {
-  background-color: var(--color-shinosawa-hiro);
-  height: 2em;
-  align-content: center;
-  padding-left: 1em;
+  .background {
+    background-color: var(--color-shinosawa-hiro);
+    height: 2em;
+    align-content: center;
+    padding-left: 1em;
+  }
 }
 
 .flash_component {
