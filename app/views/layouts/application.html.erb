@@ -30,6 +30,7 @@
 
   <body>
     <%= render HeaderComponent.new %>
+    <%= render SessionBarComponent.new(cookies: cookies) %>
     <div class="main_sidebar_container">
       <main>
         <%= render FlashComponent.new(flash: flash) %>

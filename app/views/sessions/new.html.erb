@@ -1,0 +1,12 @@
+<div class="sessions_new_page">
+  <%= content_for :title, "認証" %>
+  <%= render TitleComponent.new(title: "認証") %>
+
+  認証が必要なページです。
+
+  <%= form_with url: session_path, class: "form" do |form| %>
+    <%= form.text_field :login_name, required: true, autofocus: true, value: params[:login_name], placeholder: "ログイン名", class:"text_field" %>
+    <%= form.password_field :password, required: true, placeholder: "パスワード", class:"text_field" %>
+    <%= form.submit "認証", class: "submit" %>
+  <% end %>
+</div>
