@@ -1,5 +1,6 @@
-class Controls::Birthday::CharactersController < AuthenticatedController
+class Controls::Birthday::CharactersController < AuthenticationController
   def index
+    @characters = Birthday::Character.all
   end
 
   def new

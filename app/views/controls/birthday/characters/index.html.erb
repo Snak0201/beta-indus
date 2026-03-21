@@ -1,2 +1,23 @@
-<h1>Controls::Birthday::Characters#index</h1>
-<p>Find me in app/views/controls/birthday/characters/index.html.erb</p>
+<div class="controls_birthday_characters_index_page">
+  <%= content_for :title, "管理画面 - 誕生日が近いキャラクター" %>
+  <%= render TitleComponent.new(title: "誕生日が近いキャラクター") %>
+
+  <%= render LinkComponent.new(link_text: "管理画面トップに戻る", path: controls_path) %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>キャラクター名</th>
+        <th>誕生日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @characters.each do |character| %>
+        <tr>
+          <td><%= character.full_name %></td>
+          <td><%= character.born_on.strftime("%m月%d日") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
