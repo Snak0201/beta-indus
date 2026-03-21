@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resource :session
+
   resources :controls, only: :index
+  namespace :controls do
+    namespace :birthday do
+      resources :characters, only: [ :index, :new, :edit, :destroy ]
+    end
+  end
 
   namespace :tools do
     resource :dice, only: [ :show, :create ]
