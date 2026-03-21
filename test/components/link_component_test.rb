@@ -9,9 +9,9 @@ class LinkComponentTest < ViewComponent::TestCase
     assert_selector "a.color_shinosawa-hiro[href='/']", text: "Example Link"
   end
 
-  test "should have correct link with white color" do
-    render_inline(LinkComponent.new(link_text: "Example Link", path: "/", color: "white"))
+  test "should have correct link with color and data" do
+    render_inline(LinkComponent.new(link_text: "Example Link", path: "/", class_name: "color_white", data: { turbo_method: :delete }))
 
-    assert_selector "a.color_white[href='/']", text: "Example Link"
+    assert_selector "a.color_white[href='/'][data-turbo-method='delete']", text: "Example Link"
   end
 end
