@@ -92,6 +92,13 @@
 }
 
 .link_component {
-  color: var(--color-shinosawa-hiro);
-  text-decoration: underline;
+  .color_shinosawa-hiro {
+    text-decoration: underline;
+    color: var(--color-shinosawa-hiro);
+  }
+
+  .color_white {
+    text-decoration: underline;
+    color: white;
+  }
 }
