@@ -9,7 +9,7 @@
       <tr>
         <th>キャラクター名</th>
         <th>誕生日</th>
-        <th>カラー</th>
+        <th>ブランド</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,7 @@
         <tr>
           <td><%= character.full_name %></td>
           <td><%= character.born_on.strftime("%m月%d日") %></td>
-          <td><span style="color: <%= character.color %>;"><%= character.color %></span></td>
+          <td><%= character.brand.name %></td>
         </tr>
       <% end %>
     </tbody>
