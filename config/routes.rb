@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :controls, only: :index
   namespace :controls do
     namespace :birthday do
-      resources :characters, only: [ :index, :new, :edit, :destroy ]
+      resources :characters, only: [ :index, :new, :create, :edit, :destroy ]
     end
   end
 

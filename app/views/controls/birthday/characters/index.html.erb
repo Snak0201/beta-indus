@@ -17,7 +17,7 @@
         <tr>
           <td><%= character.full_name %></td>
           <td><%= character.born_on.strftime("%m月%d日") %></td>
-          <td><%= character.brand.name %></td>
+          <td><%= character.brand&.name %></td>
         </tr>
       <% end %>
     </tbody>

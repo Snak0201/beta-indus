@@ -1,2 +1,43 @@
-<h1>Controls::Birthday::Characters#new</h1>
-<p>Find me in app/views/controls/birthday/characters/new.html.erb</p>
+<div class="controls_birthday_characters_new_page">
+	<%= content_for :title, "管理画面 - キャラクター新規作成" %>
+	<%= render TitleComponent.new(title: "キャラクター新規作成") %>
+
+	<div class="link_to_index">
+		<%= render LinkComponent.new(link_text: "一覧に戻る", path: controls_birthday_characters_path) %>
+	</div>
+
+	<% if @character.errors.any? %>
+		<div class="errors">
+			<ul>
+				<% @character.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<%= form_with model: @character, url: controls_birthday_characters_path, local: true, class: "form" do |form| %>
+		<%= form.label :last_name, Birthday::Character.human_attribute_name(:last_name), class: "label" %>
+		<%= form.text_field :last_name, required: true, class: "text_field" %>
+
+		<%= form.label :first_name, Birthday::Character.human_attribute_name(:first_name), class: "label" %>
+		<%= form.text_field :first_name, required: true, class: "text_field" %>
+
+		<%= form.label :last_name_kana, Birthday::Character.human_attribute_name(:last_name_kana), class: "label" %>
+		<%= form.text_field :last_name_kana, required: true, class: "text_field" %>
+
+		<%= form.label :first_name_kana, Birthday::Character.human_attribute_name(:first_name_kana), class: "label" %>
+		<%= form.text_field :first_name_kana, required: true, class: "text_field" %>
+
+		<%= form.label :born_on, Birthday::Character.human_attribute_name(:born_on), class: "label" %>
+		<%= form.date_field :born_on, required: true, class: "date_field" %>
+
+		<%= form.label :color, Birthday::Character.human_attribute_name(:color), class: "label" %>
+		<%= form.color_field :color, class: "color_field" %>
+
+		<%= form.label :birthday_brand_id, Birthday::Character.human_attribute_name(:birthday_brand_id), class: "label" %>
+		<%= form.collection_select :birthday_brand_id, @brands, :id, :name, { include_blank: "なし" }, class: "select_field" %>
+
+		<%= form.submit "作成", class: "submit" %>
+	<% end %>
+</div>
