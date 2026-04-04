@@ -104,6 +104,10 @@
 }
 
 .controls_birthday_characters_index_page {
+  .link_to_new {
+    margin-top: 1em;
+  }
+
   .characters_table {
     border-collapse: collapse;
     margin-top: 2em;
@@ -113,6 +117,13 @@
       border-top: 1px solid;
       border-bottom: 1px solid;
       padding: 0.5em 2em;
+    }
+
+    .delete_button {
+      background-color: var(--color-kasugawa-chisato);
+      border: var(--color-fujita-kotone) 1px solid;
+      padding: 0.3em 1em;
+      cursor: pointer;
     }
   }
 }

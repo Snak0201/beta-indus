@@ -3,6 +3,7 @@ require "test_helper"
 class Controls::Birthday::CharactersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
+    @character = birthday_characters(:default)
   end
 
   test "should get index when authenticated" do
@@ -57,6 +58,16 @@ class Controls::Birthday::CharactersControllerTest < ActionDispatch::Integration
     assert_response :unprocessable_entity
   end
 
+  test "should destroy character when authenticated" do
+    sign_in_as @user
+
+    assert_difference("Birthday::Character.count", -1) do
+      delete controls_birthday_character_url(@character)
+    end
+
+    assert_redirected_to controls_birthday_characters_url
+  end
+
   test "should redirect index to sign in page when not authenticated" do
     get controls_birthday_characters_url
 
@@ -79,6 +90,14 @@ class Controls::Birthday::CharactersControllerTest < ActionDispatch::Integration
         born_on: Date.current
       }
     }
+
+    assert_redirected_to new_session_path
+  end
+
+  test "should redirect destroy to sign in page when not authenticated" do
+    assert_no_difference("Birthday::Character.count") do
+      delete controls_birthday_character_url(@character)
+    end
 
     assert_redirected_to new_session_path
   end

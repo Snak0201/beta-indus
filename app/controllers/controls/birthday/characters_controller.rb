@@ -24,6 +24,10 @@ class Controls::Birthday::CharactersController < AuthenticationController
   end
 
   def destroy
+    character = Birthday::Character.find(params[:id])
+    character.destroy!
+
+    redirect_to controls_birthday_characters_path, notice: "キャラクターを削除しました。"
   end
 
   private
