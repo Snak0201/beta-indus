@@ -4,11 +4,12 @@
 
   <%= render LinkComponent.new(link_text: "管理画面トップに戻る", path: controls_path) %>
 
-  <table>
+  <table class="characters_table">
     <thead>
       <tr>
         <th>キャラクター名</th>
         <th>誕生日</th>
+        <th>カラー</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
         <tr>
           <td><%= character.full_name %></td>
           <td><%= character.born_on.strftime("%m月%d日") %></td>
+          <td><span style="color: <%= character.color %>;"><%= character.color %></span></td>
         </tr>
       <% end %>
     </tbody>
