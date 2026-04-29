@@ -1,6 +1,6 @@
 class Controls::Birthday::CharactersController < AuthenticationController
   def index
-    @characters = Birthday::Character.all
+    @characters = Birthday::Character.preload(:brand)
   end
 
   def new
