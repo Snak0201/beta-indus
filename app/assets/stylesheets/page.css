@@ -120,8 +120,8 @@
     }
 
     .delete_button {
-      background-color: var(--color-kasugawa-chisato);
-      border: var(--color-fujita-kotone) 1px solid;
+      background-color: var(--color-himesaki-rinami);
+      border: var(--color-hanami-saki) 1px solid;
       padding: 0.3em 1em;
       cursor: pointer;
     }

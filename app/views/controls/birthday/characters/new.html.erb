@@ -33,7 +33,7 @@
 		<%= form.date_field :born_on, required: true, class: "date_field" %>
 
 		<%= form.label :color, Birthday::Character.human_attribute_name(:color), class: "label" %>
-		<%= form.color_field :color, class: "color_field" %>
+		<%= form.color_field :color, class: "color_field", value: "#ffffff" %>
 
 		<%= form.label :birthday_brand_id, Birthday::Character.human_attribute_name(:birthday_brand_id), class: "label" %>
 		<%= form.collection_select :birthday_brand_id, @brands, :id, :name, { include_blank: "なし" }, class: "select_field" %>
