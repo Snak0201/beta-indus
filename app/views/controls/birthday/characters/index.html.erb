@@ -1,0 +1,38 @@
+<div class="controls_birthday_characters_index_page">
+  <%= content_for :title, "管理画面 - 誕生日が近いキャラクター" %>
+  <%= render TitleComponent.new(title: "誕生日が近いキャラクター") %>
+
+  <%= render LinkComponent.new(link_text: "管理画面トップに戻る", path: controls_path) %>
+  <div class="link_to_new">
+    <%= render LinkComponent.new(link_text: "キャラクターを新規作成", path: new_controls_birthday_character_path) %>
+  </div>
+
+  <table class="characters_table">
+    <thead>
+      <tr>
+        <th>キャラクター名</th>
+        <th>誕生日</th>
+        <th>ブランド</th>
+        <th>カラー</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @characters.each do |character| %>
+        <tr>
+          <td><%= render LinkComponent.new(link_text: character.full_name, path: edit_controls_birthday_character_path(character)) %></td>
+          <td><%= character.born_on.strftime("%m月%d日") %></td>
+          <td><%= character.brand&.name %></td>
+          <td>
+            <div class="color_box" style="background-color: <%= character.color %>;">
+              <%= character.color %>
+            </div>
+          </td>
+          <td>
+            <%= button_to "削除", controls_birthday_character_path(character), method: :delete, data: { turbo_confirm: "#{character.full_name} を削除します。よろしいですか？" }, class: "delete_button" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

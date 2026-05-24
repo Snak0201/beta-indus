@@ -102,3 +102,130 @@
     }
   }
 }
+
+.controls_birthday_characters_index_page {
+  .link_to_new {
+    margin-top: 1em;
+  }
+
+  .characters_table {
+    border-collapse: collapse;
+    margin-top: 2em;
+
+    th,
+    td {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      padding: 0.5em 2em;
+    }
+
+    .delete_button {
+      background-color: var(--color-himesaki-rinami);
+      border: var(--color-hanami-saki) 1px solid;
+      padding: 0.3em 1em;
+      cursor: pointer;
+    }
+  }
+}
+
+.controls_birthday_characters_new_page {
+  .errors {
+    margin-top: 1.5em;
+  }
+
+  .form {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 12em minmax(0, 24em);
+    grid-auto-rows: minmax(2.5em, auto);
+    gap: 15px 10px;
+    align-items: center;
+
+    @media screen and (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+
+    .label {
+      @media screen and (max-width: 860px) {
+        margin-top: 0.75em;
+      }
+    }
+
+    .text_field,
+    .date_field,
+    .color_field,
+    .select_field {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .color_field {
+      min-height: 2.5em;
+      padding: 0.2em;
+    }
+
+    .submit {
+      grid-column: 1 / -1;
+      padding: 0 2em;
+      justify-self: center;
+      background-color: var(--color-katsuragi-lilja);
+      border: var(--color-hanami-saki) 1px solid;
+    }
+  }
+
+  .link_to_index {
+    margin-top: 1.5em;
+  }
+}
+
+.controls_birthday_characters_edit_page {
+  .errors {
+    margin-top: 1.5em;
+  }
+
+  .form {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 12em minmax(0, 24em);
+    grid-auto-rows: minmax(2.5em, auto);
+    gap: 15px 10px;
+    align-items: center;
+
+    @media screen and (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+
+    .label {
+      @media screen and (max-width: 860px) {
+        margin-top: 0.75em;
+      }
+    }
+
+    .text_field,
+    .date_field,
+    .color_field,
+    .select_field {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .color_field {
+      min-height: 2.5em;
+      padding: 0.2em;
+    }
+
+    .submit {
+      grid-column: 1 / -1;
+      padding: 0 2em;
+      justify-self: center;
+      background-color: var(--color-katsuragi-lilja);
+      border: var(--color-hanami-saki) 1px solid;
+    }
+  }
+
+  .link_to_index {
+    margin-top: 1.5em;
+  }
+}
