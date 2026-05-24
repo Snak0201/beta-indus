@@ -20,7 +20,7 @@
     <tbody>
       <% @characters.each do |character| %>
         <tr>
-          <td><%= character.full_name %></td>
+          <td><%= render LinkComponent.new(link_text: character.full_name, path: edit_controls_birthday_character_path(character)) %></td>
           <td><%= character.born_on.strftime("%m月%d日") %></td>
           <td><%= character.brand&.name %></td>
           <td>

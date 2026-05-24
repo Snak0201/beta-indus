@@ -21,6 +21,20 @@ class Controls::Birthday::CharactersController < AuthenticationController
   end
 
   def edit
+    @character = Birthday::Character.find(params[:id])
+    set_brands
+  end
+
+  def update
+    @character = Birthday::Character.find(params[:id])
+
+    if @character.update(character_params)
+      redirect_to controls_birthday_characters_path, notice: "キャラクターを更新しました。"
+    else
+      set_brands
+      flash.now[:alert] = @character.errors.full_messages
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
