@@ -13,6 +13,7 @@
         <th>キャラクター名</th>
         <th>誕生日</th>
         <th>ブランド</th>
+        <th>カラー</th>
         <th></th>
       </tr>
     </thead>
@@ -22,6 +23,11 @@
           <td><%= character.full_name %></td>
           <td><%= character.born_on.strftime("%m月%d日") %></td>
           <td><%= character.brand&.name %></td>
+          <td>
+            <div class="color_box" style="background-color: <%= character.color %>;">
+              <%= character.color %>
+            </div>
+          </td>
           <td>
             <%= button_to "削除", controls_birthday_character_path(character), method: :delete, data: { turbo_confirm: "#{character.full_name} を削除します。よろしいですか？" }, class: "delete_button" %>
           </td>
