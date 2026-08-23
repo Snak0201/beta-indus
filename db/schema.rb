@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_07_123621) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_23_092747) do
   create_table "birthday_brands", force: :cascade do |t|
     t.date "born_on", null: false
     t.string "color"
@@ -44,6 +44,64 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_07_123621) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "the_idolmaster_gakuen_characters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+    t.string "voice"
+  end
+
+  create_table "the_idolmaster_gakuen_events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "held_on"
+    t.string "kind"
+    t.string "name"
+    t.datetime "updated_at", null: false
+    t.integer "venue_id", null: false
+    t.index ["venue_id"], name: "index_the_idolmaster_gakuen_events_on_venue_id"
+  end
+
+  create_table "the_idolmaster_gakuen_performers", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.datetime "created_at", null: false
+    t.integer "set_list_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_the_idolmaster_gakuen_performers_on_character_id"
+    t.index ["set_list_id"], name: "index_the_idolmaster_gakuen_performers_on_set_list_id"
+  end
+
+  create_table "the_idolmaster_gakuen_set_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "event_id", null: false
+    t.integer "song_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_the_idolmaster_gakuen_set_lists_on_event_id"
+    t.index ["song_id"], name: "index_the_idolmaster_gakuen_set_lists_on_song_id"
+  end
+
+  create_table "the_idolmaster_gakuen_songs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.date "released_on"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "the_idolmaster_gakuen_venues", force: :cascade do |t|
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "the_idolmaster_gakuen_vocals", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.datetime "created_at", null: false
+    t.integer "song_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_the_idolmaster_gakuen_vocals_on_character_id"
+    t.index ["song_id"], name: "index_the_idolmaster_gakuen_vocals_on_song_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "login_name", null: false
@@ -54,4 +112,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_07_123621) do
 
   add_foreign_key "birthday_characters", "birthday_brands"
   add_foreign_key "sessions", "users"
+  add_foreign_key "the_idolmaster_gakuen_events", "venues"
+  add_foreign_key "the_idolmaster_gakuen_performers", "characters"
+  add_foreign_key "the_idolmaster_gakuen_performers", "set_lists"
+  add_foreign_key "the_idolmaster_gakuen_set_lists", "events"
+  add_foreign_key "the_idolmaster_gakuen_set_lists", "songs"
+  add_foreign_key "the_idolmaster_gakuen_vocals", "characters"
+  add_foreign_key "the_idolmaster_gakuen_vocals", "songs"
 end
